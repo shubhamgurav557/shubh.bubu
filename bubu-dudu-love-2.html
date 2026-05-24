@@ -1,0 +1,1854 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Shona 🐼💕</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&family=Nunito:ital,wght@0,400;0,600;0,800;1,400;1,700&family=Dancing+Script:wght@600;700&family=Quicksand:wght@500;700&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --pink: #ffb5c8;
+      --pink-deep: #ff85a1;
+      --pink-soft: #ffd6e7;
+      --peach: #ffd4a3;
+      --cream: #fff8f0;
+      --brown: #8b5e52;
+      --brown-light: #c4907a;
+      --text: #5a3a3a;
+      --shadow: rgba(255, 133, 161, .28);
+      --nav-h: 68px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28'%3E%3Ctext y='22' font-size='20'%3E🐾%3C/text%3E%3C/svg%3E") 10 10, auto;
+    }
+
+    /* HEARTS BG */
+    .hearts-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .heart-float {
+      position: absolute;
+      bottom: -60px;
+      animation: floatUp linear infinite;
+      opacity: .3;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: .3
+      }
+
+      100% {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0
+      }
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 200;
+      height: var(--nav-h);
+      background: rgba(255, 248, 252, .95);
+      backdrop-filter: blur(20px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(16px, 4vw, 48px);
+      box-shadow: 0 1px 0 rgba(255, 133, 161, .2), 0 4px 24px rgba(255, 133, 161, .1);
+    }
+
+    nav::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--pink-deep), var(--peach), var(--pink-deep), transparent);
+    }
+
+    .nav-logo {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(1rem, 2.5vw, 1.35rem);
+      font-weight: 800;
+      color: var(--pink-deep);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: clamp(2px, 1vw, 8px);
+      list-style: none;
+      flex-wrap: nowrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--brown);
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 700;
+      font-size: clamp(.72rem, .9vw, .85rem);
+      padding: clamp(5px, 1vw, 7px) clamp(8px, 1.2vw, 14px);
+      border-radius: 50px;
+      border: 1.5px solid transparent;
+      transition: all .22s;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: var(--pink-deep);
+      background: rgba(255, 133, 161, .1);
+      border-color: var(--pink);
+    }
+
+    /* mobile nav toggle */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--pink-deep);
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-h);
+      left: 0;
+      right: 0;
+      z-index: 199;
+      background: rgba(255, 248, 252, .98);
+      backdrop-filter: blur(20px);
+      padding: 16px 24px 24px;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: 0 12px 30px rgba(255, 133, 161, .15);
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      text-decoration: none;
+      color: var(--text);
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 12px 18px;
+      border-radius: 14px;
+      border: 1.5px solid var(--pink);
+      background: #fff5f8;
+      transition: all .2s;
+    }
+
+    .mobile-menu a:hover {
+      background: var(--pink-deep);
+      color: white;
+      border-color: var(--pink-deep);
+    }
+
+    section {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: calc(var(--nav-h)+40px) clamp(16px, 4vw, 60px) 70px;
+      background: radial-gradient(ellipse at 25% 35%, #ffe0ec 0%, transparent 52%),
+        radial-gradient(ellipse at 78% 68%, #ffecd2 0%, transparent 52%),
+        linear-gradient(170deg, #fff5f9 0%, #fff8f0 100%);
+      overflow: hidden;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(55px);
+      opacity: .3;
+      pointer-events: none;
+    }
+
+    .blob1 {
+      width: min(380px, 60vw);
+      height: min(380px, 60vw);
+      background: #ffb5c8;
+      top: -80px;
+      left: -80px;
+      animation: bDrift 9s ease-in-out infinite alternate;
+    }
+
+    .blob2 {
+      width: min(280px, 50vw);
+      height: min(280px, 50vw);
+      background: #ffd4a3;
+      bottom: -50px;
+      right: -60px;
+      animation: bDrift 11s 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes bDrift {
+      0% {
+        transform: translate(0, 0) scale(1)
+      }
+
+      100% {
+        transform: translate(25px, 18px) scale(1.07)
+      }
+    }
+
+    .hero-tag {
+      background: linear-gradient(135deg, var(--pink-deep), #ff6b9d);
+      color: white;
+      font-size: clamp(.7rem, .9vw, .82rem);
+      font-weight: 800;
+      padding: 6px 20px;
+      border-radius: 50px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      animation: fadeSlide .9s ease backwards;
+      box-shadow: 0 4px 14px var(--shadow);
+    }
+
+    /* ── BEAR STAGE ── */
+    .bear-stage {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: clamp(16px, 4vw, 44px);
+      margin-bottom: 28px;
+      animation: fadeSlide .9s .1s ease backwards;
+    }
+
+    .bear-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bear-svg-wrap {
+      animation: bBounce 2.2s ease-in-out infinite;
+    }
+
+    .bear-svg-wrap:nth-of-type(1) {
+      animation-delay: .35s;
+    }
+
+    @keyframes bBounce {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-16px)
+      }
+    }
+
+    .bear-name-tag {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(.72rem, .9vw, .82rem);
+      font-weight: 800;
+      color: white;
+      background: var(--pink-deep);
+      padding: 3px 14px;
+      border-radius: 50px;
+      box-shadow: 0 3px 10px var(--shadow);
+    }
+
+    .bear-name-tag.teal {
+      background: linear-gradient(135deg, #5db8a0, #3d9e86);
+    }
+
+    .heart-center {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      animation: hPulse 1.3s ease-in-out infinite;
+      filter: drop-shadow(0 4px 10px rgba(255, 100, 130, .35));
+      margin-bottom: 10px;
+    }
+
+    @keyframes hPulse {
+
+      0%,
+      100% {
+        transform: scale(1)
+      }
+
+      50% {
+        transform: scale(1.38)
+      }
+    }
+
+    .hero-title {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(2.2rem, 7vw, 5rem);
+      font-weight: 800;
+      color: var(--pink-deep);
+      text-shadow: 3px 3px 0 var(--peach), 7px 7px 0 rgba(255, 133, 161, .12);
+      line-height: 1.1;
+      animation: fadeSlide .9s .2s ease backwards;
+    }
+
+    .hero-subtitle {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1rem, 2.2vw, 1.5rem);
+      color: var(--brown-light);
+      margin: 14px 0 32px;
+      animation: fadeSlide .9s .4s ease backwards;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--pink-deep), #ff6b9d);
+      color: white;
+      padding: 14px clamp(28px, 5vw, 44px);
+      border-radius: 50px;
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(1rem, 1.5vw, 1.12rem);
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 8px 28px var(--shadow);
+      transition: transform .3s, box-shadow .3s;
+      animation: fadeSlide .9s .6s ease backwards;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 18px 40px var(--shadow);
+    }
+
+    @keyframes fadeSlide {
+      from {
+        opacity: 0;
+        transform: translateY(26px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: var(--pink-deep);
+      font-size: .8rem;
+    }
+
+    .scroll-arrow {
+      width: 20px;
+      height: 20px;
+      border-right: 3px solid var(--pink-deep);
+      border-bottom: 3px solid var(--pink-deep);
+      transform: rotate(45deg);
+      animation: sBounce 1.6s ease-in-out infinite;
+    }
+
+    @keyframes sBounce {
+
+      0%,
+      100% {
+        transform: rotate(45deg) translateY(0)
+      }
+
+      50% {
+        transform: rotate(45deg) translateY(9px)
+      }
+    }
+
+    /* SECTION HEADERS */
+    .section-title {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
+      font-weight: 800;
+      text-align: center;
+      color: var(--pink-deep);
+      margin-bottom: 10px;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: var(--brown-light);
+      font-size: clamp(.88rem, 1.2vw, 1rem);
+      font-style: italic;
+      margin-bottom: clamp(32px, 5vw, 52px);
+    }
+
+    .section-pad {
+      padding: clamp(64px, 10vw, 100px) clamp(16px, 4vw, 40px);
+    }
+
+    /* TIMELINE */
+    #timeline {
+      background: white;
+    }
+
+    .tl-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .tl-wrap::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--pink), var(--peach));
+      border-radius: 10px;
+      transform: translateX(-50%);
+    }
+
+    .tl-item {
+      display: flex;
+      gap: clamp(16px, 3vw, 30px);
+      margin-bottom: clamp(32px, 5vw, 52px);
+      position: relative;
+      align-items: flex-start;
+    }
+
+    .tl-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .tl-item:nth-child(even) .tl-card {
+      text-align: right;
+    }
+
+    .tl-dot {
+      position: absolute;
+      left: 50%;
+      top: 16px;
+      transform: translateX(-50%);
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink-deep), var(--peach));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 16px var(--shadow);
+      z-index: 2;
+      border: 3px solid white;
+      transition: transform .3s;
+    }
+
+    .tl-dot:hover {
+      transform: translateX(-50%) scale(1.2);
+    }
+
+    .tl-card {
+      width: calc(50% - 44px);
+      background: linear-gradient(135deg, #fff5f8, #fff0ea);
+      border: 2px solid var(--pink);
+      border-radius: 20px;
+      padding: clamp(16px, 2.5vw, 24px) clamp(18px, 3vw, 28px);
+      box-shadow: 0 6px 22px rgba(255, 133, 161, .1);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .6s, transform .6s;
+    }
+
+    .tl-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .tl-spacer {
+      width: calc(50% - 44px);
+    }
+
+    .tl-date {
+      font-family: 'Baloo 2', cursive;
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--pink-deep);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    .tl-card h3 {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(1rem, 1.5vw, 1.12rem);
+      color: var(--text);
+      margin-bottom: 7px;
+    }
+
+    .tl-card p {
+      font-size: clamp(.86rem, 1.1vw, .93rem);
+      line-height: 1.75;
+      color: var(--brown);
+    }
+
+    /* ABOUT */
+    #about {
+      background: linear-gradient(160deg, #fff5fb, #ffecd2);
+    }
+
+    .about-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+      gap: clamp(16px, 2.5vw, 28px);
+    }
+
+    .about-card {
+      background: white;
+      border-radius: 24px;
+      padding: clamp(22px, 3vw, 34px) clamp(18px, 2.5vw, 28px);
+      text-align: center;
+      box-shadow: 0 8px 28px rgba(255, 133, 161, .1);
+      border: 2px solid var(--pink);
+      transition: transform .35s, box-shadow .35s;
+    }
+
+    .about-card:hover {
+      transform: translateY(-9px);
+      box-shadow: 0 22px 55px var(--shadow);
+    }
+
+    .about-card .ac-emoji {
+      font-size: clamp(2.4rem, 4vw, 3.2rem);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .about-card h3 {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(1rem, 1.5vw, 1.18rem);
+      color: var(--pink-deep);
+      margin-bottom: 9px;
+    }
+
+    .about-card p {
+      font-size: clamp(.86rem, 1.1vw, .93rem);
+      line-height: 1.8;
+      color: var(--brown);
+    }
+
+    /* REASONS */
+    #reasons {
+      background: white;
+    }
+
+    .reasons-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .reason-item {
+      display: flex;
+      align-items: flex-start;
+      gap: clamp(12px, 2vw, 20px);
+      background: linear-gradient(135deg, #fff5f8, white);
+      border-radius: 18px;
+      padding: clamp(16px, 2.5vw, 24px) clamp(18px, 3vw, 28px);
+      margin-bottom: 14px;
+      border-left: 5px solid var(--pink-deep);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .05);
+      transform: translateX(-35px);
+      opacity: 0;
+      transition: all .6s ease;
+    }
+
+    .reason-item.visible {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .reason-num {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(1.6rem, 2.5vw, 2rem);
+      font-weight: 800;
+      color: var(--pink);
+      min-width: 44px;
+      line-height: 1;
+    }
+
+    .reason-text h4 {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(.98rem, 1.4vw, 1.1rem);
+      color: var(--pink-deep);
+      margin-bottom: 5px;
+    }
+
+    .reason-text p {
+      color: var(--brown);
+      font-size: clamp(.86rem, 1.1vw, .93rem);
+      line-height: 1.65;
+    }
+
+    /* MEMORIES */
+    #memories {
+      background: linear-gradient(160deg, #fff5fb, #ffecd2);
+    }
+
+    .gallery-grid {
+      max-width: 1020px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(200px, 45vw), 1fr));
+      gap: clamp(12px, 2vw, 20px);
+    }
+
+    .memory-card {
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 1;
+      cursor: pointer;
+      transition: transform .4s, box-shadow .4s;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, .1);
+    }
+
+    .memory-card:hover {
+      transform: scale(1.06) rotate(1deg);
+      box-shadow: 0 18px 44px var(--shadow);
+    }
+
+    .memory-card-inner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: clamp(12px, 2vw, 22px);
+      text-align: center;
+    }
+
+    .mem-emoji {
+      font-size: clamp(2.4rem, 5vw, 3.5rem);
+    }
+
+    .mem-label {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(.78rem, 1.1vw, .9rem);
+      font-weight: 700;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, .22);
+    }
+
+    .mc1 {
+      background: linear-gradient(135deg, #ffb5c8, #ff85a1);
+    }
+
+    .mc2 {
+      background: linear-gradient(135deg, #ffd4a3, #ffb347);
+    }
+
+    .mc3 {
+      background: linear-gradient(135deg, #c8f0e8, #4caf94);
+    }
+
+    .mc4 {
+      background: linear-gradient(135deg, #e8d5f5, #b48de0);
+    }
+
+    .mc5 {
+      background: linear-gradient(135deg, #fff0a3, #ffd700);
+    }
+
+    .mc6 {
+      background: linear-gradient(135deg, #ffd6e7, #ff85a1);
+    }
+
+    .mc7 {
+      background: linear-gradient(135deg, #b8e0ff, #6ab0e0);
+    }
+
+    .mc8 {
+      background: linear-gradient(135deg, #d4f5c8, #7bc67e);
+    }
+
+    /* LETTER */
+    #letter {
+      background: white;
+    }
+
+    .letter-wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: linear-gradient(145deg, #fffaf8, #fff5f8);
+      border-radius: 28px;
+      padding: clamp(32px, 5vw, 52px) clamp(24px, 5vw, 58px);
+      box-shadow: 0 20px 60px var(--shadow);
+      position: relative;
+      border: 2px dashed var(--pink);
+    }
+
+    .letter-wrapper::before {
+      content: '💌';
+      position: absolute;
+      top: -26px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 3rem;
+      background: white;
+      padding: 0 12px;
+    }
+
+    .letter-date {
+      text-align: right;
+      color: var(--brown-light);
+      font-style: italic;
+      margin-bottom: 20px;
+      font-size: .88rem;
+    }
+
+    .letter-salute {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1.3rem, 2.5vw, 1.65rem);
+      color: var(--pink-deep);
+      margin-bottom: 14px;
+    }
+
+    .letter-content {
+      font-size: clamp(.94rem, 1.2vw, 1.04rem);
+      line-height: 2;
+      color: var(--text);
+    }
+
+    .letter-content p {
+      margin-bottom: 16px;
+    }
+
+    .letter-sig {
+      margin-top: 28px;
+      text-align: right;
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      color: var(--pink-deep);
+    }
+
+    /* HUG */
+    #interactive {
+      background: linear-gradient(160deg, #fff5fb, #ffecd2);
+      text-align: center;
+    }
+
+    .bear-click-area {
+      position: relative;
+      display: inline-block;
+      margin: 16px auto;
+    }
+
+    #clickBear {
+      font-size: clamp(5rem, 12vw, 8rem);
+      display: block;
+      transition: transform .1s;
+      cursor: pointer;
+      filter: drop-shadow(0 10px 20px var(--shadow));
+      user-select: none;
+    }
+
+    #clickBear:active {
+      transform: scale(.82);
+    }
+
+    .click-counter {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+      color: var(--pink-deep);
+      margin-top: 14px;
+    }
+
+    .pop-heart {
+      position: absolute;
+      pointer-events: none;
+      font-size: 1.9rem;
+      animation: popFly 1.2s ease-out forwards;
+    }
+
+    @keyframes popFly {
+      0% {
+        opacity: 1;
+        transform: translateY(0) scale(1)
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(-130px) scale(1.6)
+      }
+    }
+
+    /* QUIZ */
+    #quiz {
+      background: white;
+    }
+
+    .quiz-box {
+      max-width: 600px;
+      margin: 0 auto;
+      background: linear-gradient(145deg, #fff5f8, white);
+      border-radius: 26px;
+      padding: clamp(24px, 4vw, 40px);
+      box-shadow: 0 12px 42px var(--shadow);
+      text-align: center;
+      border: 2px solid var(--pink);
+    }
+
+    .quiz-progress {
+      color: var(--brown-light);
+      font-size: .85rem;
+      margin-bottom: 10px;
+    }
+
+    .quiz-q {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(1.05rem, 1.8vw, 1.26rem);
+      color: var(--text);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .quiz-options {
+      display: grid;
+      gap: 10px;
+    }
+
+    .quiz-opt {
+      padding: 13px 20px;
+      border-radius: 50px;
+      border: 2px solid var(--pink);
+      background: #fff5f8;
+      cursor: pointer;
+      font-family: 'Nunito', sans-serif;
+      font-size: clamp(.88rem, 1.2vw, .97rem);
+      font-weight: 700;
+      color: var(--text);
+      transition: all .22s;
+    }
+
+    .quiz-opt:hover {
+      background: var(--pink);
+      color: white;
+      transform: scale(1.03);
+    }
+
+    .quiz-opt.correct {
+      background: #c8f0e8;
+      border-color: #4caf94;
+      color: #2d7a5e;
+    }
+
+    .quiz-opt.wrong {
+      background: #ffd4d4;
+      border-color: #e05c5c;
+      color: #9e2a2a;
+    }
+
+    .quiz-result {
+      display: none;
+      margin-top: 20px;
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(1rem, 1.5vw, 1.12rem);
+      color: var(--pink-deep);
+      line-height: 1.6;
+    }
+
+    .quiz-nav {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .quiz-nav button {
+      padding: 10px 26px;
+      border-radius: 50px;
+      border: none;
+      background: var(--pink-deep);
+      color: white;
+      font-family: 'Baloo 2', cursive;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform .2s;
+    }
+
+    .quiz-nav button:hover {
+      transform: scale(1.05);
+    }
+
+    /* COUNTDOWN */
+    #countdown {
+      background: linear-gradient(135deg, #ff85a1, #ffb5c8, #ffd4a3);
+      text-align: center;
+    }
+
+    #countdown .section-title {
+      color: white;
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, .08);
+    }
+
+    #countdown .section-sub {
+      color: rgba(255, 255, 255, .88);
+    }
+
+    .countdown-grid {
+      display: flex;
+      justify-content: center;
+      gap: clamp(10px, 2vw, 20px);
+      flex-wrap: wrap;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .cd-block {
+      background: rgba(255, 255, 255, .26);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: clamp(18px, 3vw, 26px) clamp(14px, 2.5vw, 22px);
+      min-width: clamp(78px, 18vw, 120px);
+      border: 2px solid rgba(255, 255, 255, .55);
+      box-shadow: 0 8px 26px rgba(0, 0, 0, .1);
+    }
+
+    .cd-num {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      display: block;
+      line-height: 1;
+      color: white;
+    }
+
+    .cd-label {
+      font-size: clamp(.68rem, .9vw, .78rem);
+      font-weight: 700;
+      opacity: .9;
+      margin-top: 5px;
+      display: block;
+      color: white;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* SONGS */
+    #vibes {
+      background: white;
+    }
+
+    .song-list {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .song-card {
+      display: flex;
+      align-items: center;
+      gap: clamp(10px, 2vw, 16px);
+      background: linear-gradient(135deg, #fff5f8, white);
+      border: 2px solid var(--pink);
+      border-radius: 18px;
+      padding: clamp(12px, 2vw, 16px) clamp(14px, 2.5vw, 22px);
+      transition: all .28s;
+      cursor: pointer;
+      box-shadow: 0 3px 12px rgba(255, 133, 161, .08);
+    }
+
+    .song-card:hover {
+      background: linear-gradient(135deg, var(--pink-deep), #ff6b9d);
+      transform: translateX(8px);
+      box-shadow: 0 10px 28px var(--shadow);
+    }
+
+    .song-card:hover .song-title,
+    .song-card:hover .song-artist {
+      color: white;
+    }
+
+    .song-num {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+      color: var(--pink);
+      min-width: 32px;
+      font-weight: 800;
+    }
+
+    .song-card:hover .song-num {
+      color: rgba(255, 255, 255, .75);
+    }
+
+    .song-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .song-title {
+      font-weight: 800;
+      color: var(--text);
+      font-size: clamp(.88rem, 1.2vw, .96rem);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .song-artist {
+      font-size: clamp(.78rem, 1vw, .82rem);
+      color: var(--brown-light);
+      margin-top: 2px;
+    }
+
+    .song-note {
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+    }
+
+    .song-fav {
+      background: linear-gradient(135deg, #fff9e0, #fff3b0) !important;
+      border-color: #ffd700 !important;
+    }
+
+    .song-fav .song-title {
+      color: #7a5c00 !important;
+    }
+
+    .song-fav .song-artist {
+      color: #a07800 !important;
+    }
+
+    .song-fav .song-num {
+      color: #e0a800 !important;
+    }
+
+    .song-fav:hover {
+      background: linear-gradient(135deg, #ffd700, #ffb347) !important;
+    }
+
+    .song-fav:hover .song-title,
+    .song-fav:hover .song-artist {
+      color: white !important;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: clamp(48px, 8vw, 70px) clamp(16px, 4vw, 40px) clamp(32px, 5vw, 48px);
+      background: linear-gradient(135deg, #ffd6e7, #ffecd2);
+      text-align: center;
+    }
+
+    .footer-bears {
+      font-size: clamp(2rem, 5vw, 3rem);
+      letter-spacing: 10px;
+      margin-bottom: 16px;
+      display: block;
+      animation: bBounce 2s ease-in-out infinite;
+    }
+
+    footer p {
+      color: var(--brown);
+      font-size: clamp(.88rem, 1.2vw, .97rem);
+      line-height: 2.1;
+    }
+
+    footer strong {
+      color: var(--pink-deep);
+    }
+
+    .footer-sig {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      color: var(--pink-deep);
+      margin-top: 14px;
+      display: block;
+    }
+
+    /* UTILS */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s, transform .7s;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .confetti-piece {
+      position: fixed;
+      top: -20px;
+      border-radius: 3px;
+      z-index: 9999;
+      pointer-events: none;
+      animation: confettiFall linear forwards;
+    }
+
+    @keyframes confettiFall {
+      0% {
+        transform: translateY(-20px) rotate(0deg);
+        opacity: 1
+      }
+
+      100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0
+      }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      /* timeline → single column */
+      .tl-wrap::before {
+        left: 20px;
+      }
+
+      .tl-item,
+      .tl-item:nth-child(even) {
+        flex-direction: column;
+        padding-left: 58px;
+      }
+
+      .tl-item:nth-child(even) .tl-card {
+        text-align: left;
+      }
+
+      .tl-card,
+      .tl-spacer {
+        width: 100% !important;
+      }
+
+      .tl-dot {
+        left: 20px;
+        top: 10px;
+        transform: none !important;
+        width: 38px;
+        height: 38px;
+        font-size: 1.1rem;
+      }
+
+      /* gallery 2 col on mobile */
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width:480px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .bear-stage {
+        gap: 12px;
+      }
+
+      .countdown-grid {
+        gap: 8px;
+      }
+
+      .cd-block {
+        min-width: 70px;
+        padding: 14px 10px;
+      }
+
+      .cd-num {
+        font-size: 1.8rem;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .letter-wrapper {
+        padding: 28px 18px;
+      }
+
+      .about-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hearts-bg" id="heartsBg"></div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">🐼 Shubham & Shona 🐻</div>
+    <ul class="nav-links">
+      <li><a href="#timeline">Our Story</a></li>
+      <li><a href="#about">About Her</a></li>
+      <li><a href="#reasons">Why You</a></li>
+      <li><a href="#memories">Memories</a></li>
+      <li><a href="#letter">Letter 💌</a></li>
+      <li><a href="#interactive">Hug 🤗</a></li>
+      <li><a href="#quiz">Quiz 🎀</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#timeline" class="mm-link">🎞️ Our Story</a>
+    <a href="#about" class="mm-link">🌟 About Her</a>
+    <a href="#reasons" class="mm-link">💌 Why You</a>
+    <a href="#memories" class="mm-link">📸 Memories</a>
+    <a href="#letter" class="mm-link">💌 Letter</a>
+    <a href="#interactive" class="mm-link">🤗 Hug Bear</a>
+    <a href="#quiz" class="mm-link">🎀 Quiz</a>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section id="hero">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="hero-tag">🌸 Happy 1 Year, My Shona 🌸</div>
+
+    <div class="bear-stage">
+      <!-- DUDU — Brown Bear (Shubham) original style -->
+      <div class="bear-wrap">
+        <div class="bear-svg-wrap">
+          <svg width="130" height="150" viewBox="0 0 130 150" xmlns="http://www.w3.org/2000/svg">
+            <!-- Body round chubby -->
+            <ellipse cx="65" cy="108" rx="44" ry="42" fill="#d49060" />
+            <!-- Head big round -->
+            <circle cx="65" cy="62" r="46" fill="#d49060" />
+            <!-- Ears — small round on top -->
+            <circle cx="30" cy="28" r="16" fill="#d49060" />
+            <circle cx="30" cy="28" r="9" fill="#e8aa78" />
+            <circle cx="100" cy="28" r="16" fill="#d49060" />
+            <circle cx="100" cy="28" r="9" fill="#e8aa78" />
+            <!-- Snout — big soft oval -->
+            <ellipse cx="65" cy="74" rx="26" ry="20" fill="#e8aa78" />
+            <!-- Eyes — original style: big round white + dark pupil + tiny star shine -->
+            <circle cx="51" cy="57" r="11" fill="white" />
+            <circle cx="79" cy="57" r="11" fill="white" />
+            <circle cx="53" cy="58" r="7" fill="#1a1a1a" />
+            <circle cx="81" cy="58" r="7" fill="#1a1a1a" />
+            <!-- highlight dots -->
+            <circle cx="56" cy="55" r="2.5" fill="white" />
+            <circle cx="84" cy="55" r="2.5" fill="white" />
+            <!-- tiny lower shine -->
+            <circle cx="55" cy="61" r="1.2" fill="white" opacity=".6" />
+            <circle cx="83" cy="61" r="1.2" fill="white" opacity=".6" />
+            <!-- Nose — small round dark -->
+            <ellipse cx="65" cy="69" rx="5.5" ry="4" fill="#1a1a1a" />
+            <!-- Mouth — simple curved smile -->
+            <path d="M58 77 Q65 85 72 77" stroke="#1a1a1a" stroke-width="2.2" fill="none" stroke-linecap="round" />
+            <!-- Rosy cheeks -->
+            <ellipse cx="40" cy="70" rx="10" ry="7" fill="#ff8fab" opacity=".4" />
+            <ellipse cx="90" cy="70" rx="10" ry="7" fill="#ff8fab" opacity=".4" />
+            <!-- Arms chubby -->
+            <ellipse cx="21" cy="112" rx="13" ry="28" fill="#d49060" transform="rotate(-20 21 112)" />
+            <ellipse cx="109" cy="112" rx="13" ry="28" fill="#d49060" transform="rotate(20 109 112)" />
+            <!-- Belly oval lighter -->
+            <ellipse cx="65" cy="110" rx="28" ry="26" fill="#e8aa78" />
+            <!-- Feet -->
+            <ellipse cx="46" cy="146" rx="17" ry="10" fill="#c07840" />
+            <ellipse cx="84" cy="146" rx="17" ry="10" fill="#c07840" />
+            <!-- Tiny scarf -->
+            <path d="M30 90 Q65 98 100 90 Q100 102 65 104 Q30 102 30 90Z" fill="#ff85a1" opacity=".9" />
+            <ellipse cx="65" cy="97" rx="8" ry="6" fill="#ff6b9d" />
+          </svg>
+        </div>
+        <div class="bear-name-tag">Shubham 🐻</div>
+      </div>
+
+      <div class="heart-center">💕</div>
+
+      <!-- BUBU — Panda (Shona) original style -->
+      <div class="bear-wrap">
+        <div class="bear-svg-wrap" style="animation-delay:.35s">
+          <svg width="130" height="150" viewBox="0 0 130 150" xmlns="http://www.w3.org/2000/svg">
+            <!-- Body -->
+            <ellipse cx="65" cy="108" rx="44" ry="42" fill="#f5f2ee" />
+            <ellipse cx="65" cy="108" rx="44" ry="42" fill="none" stroke="#e0dbd4" stroke-width="1" />
+            <!-- Head -->
+            <circle cx="65" cy="62" r="46" fill="#f5f2ee" />
+            <circle cx="65" cy="62" r="46" fill="none" stroke="#e0dbd4" stroke-width="1" />
+            <!-- Ears dark -->
+            <circle cx="30" cy="26" r="16" fill="#2e2e2e" />
+            <circle cx="100" cy="26" r="16" fill="#2e2e2e" />
+            <!-- Eye patches — original: large rounded dark ovals -->
+            <ellipse cx="51" cy="59" rx="16" ry="15" fill="#2e2e2e" />
+            <ellipse cx="79" cy="59" rx="16" ry="15" fill="#2e2e2e" />
+            <!-- Eye whites inside patches -->
+            <circle cx="51" cy="59" r="9" fill="white" />
+            <circle cx="79" cy="59" r="9" fill="white" />
+            <!-- Pupils -->
+            <circle cx="52" cy="60" r="6" fill="#1a1a1a" />
+            <circle cx="80" cy="60" r="6" fill="#1a1a1a" />
+            <!-- Shine highlights -->
+            <circle cx="55" cy="57" r="2.5" fill="white" />
+            <circle cx="83" cy="57" r="2.5" fill="white" />
+            <circle cx="54" cy="63" r="1.2" fill="white" opacity=".6" />
+            <circle cx="82" cy="63" r="1.2" fill="white" opacity=".6" />
+            <!-- Snout -->
+            <ellipse cx="65" cy="74" rx="24" ry="18" fill="#edeae4" />
+            <!-- Nose -->
+            <ellipse cx="65" cy="69" rx="5" ry="3.8" fill="#1a1a1a" />
+            <!-- Mouth -->
+            <path d="M58 77 Q65 86 72 77" stroke="#1a1a1a" stroke-width="2.2" fill="none" stroke-linecap="round" />
+            <!-- Cheek blush -->
+            <ellipse cx="38" cy="72" rx="10" ry="7" fill="#ff8fab" opacity=".45" />
+            <ellipse cx="92" cy="72" rx="10" ry="7" fill="#ff8fab" opacity=".45" />
+            <!-- Arms dark -->
+            <ellipse cx="20" cy="112" rx="13" ry="28" fill="#2e2e2e" transform="rotate(-20 20 112)" />
+            <ellipse cx="110" cy="112" rx="13" ry="28" fill="#2e2e2e" transform="rotate(20 110 112)" />
+            <!-- Belly light -->
+            <ellipse cx="65" cy="110" rx="28" ry="26" fill="#edeae4" />
+            <!-- Feet dark -->
+            <ellipse cx="46" cy="146" rx="17" ry="10" fill="#2e2e2e" />
+            <ellipse cx="84" cy="146" rx="17" ry="10" fill="#2e2e2e" />
+            <!-- Bow — original style pink double loop -->
+            <ellipse cx="100" cy="27" rx="14" ry="9" fill="#ff85a1" transform="rotate(-30 100 27)" />
+            <ellipse cx="114" cy="18" rx="12" ry="8" fill="#ff85a1" transform="rotate(-30 114 18)" />
+            <circle cx="107" cy="22" r="5" fill="#ff6b9d" />
+          </svg>
+        </div>
+        <div class="bear-name-tag teal">Shona 🐼</div>
+      </div>
+    </div>
+
+    <h1 class="hero-title">For You, My Shona 🐼</h1>
+    <p class="hero-subtitle">A whole year of you — and I'd choose you a thousand times over 💕</p>
+    <a href="#timeline" class="cta-btn">Enter Our Little World 🌸</a>
+    <div class="scroll-hint"><span>Scroll down</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ── TIMELINE ── -->
+  <section id="timeline" class="section-pad">
+    <div class="fade-in">
+      <h2 class="section-title">🎞️ Our Story</h2>
+      <p class="section-sub">Every chapter of us, written with love 📖</p>
+    </div>
+    <div class="tl-wrap">
+      <div class="tl-item">
+        <div class="tl-card">
+          <div class="tl-date">7th June 2025</div>
+          <h3>The Universe Planned This ✨</h3>
+          <p>A Marathi Community Meetup in Bangalore. Two strangers, one crowd — and somehow, the universe made sure our
+            paths crossed that evening. Neither of us knew what that quiet moment would grow into.</p>
+        </div>
+        <div class="tl-dot">🌟</div>
+        <div class="tl-spacer"></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-spacer"></div>
+        <div class="tl-dot">🌿</div>
+        <div class="tl-card">
+          <div class="tl-date">The Quiet Chapter</div>
+          <h3>Distance & Silence 🌙</h3>
+          <p>Life pulled us apart for a while — talks grew sparse, and the space between two people meant to find each
+            other again quietly widened. But some bonds are stubborn. They refuse to fade.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-card">
+          <div class="tl-date">The Reconnection</div>
+          <h3>One Beautiful Promise 🤝</h3>
+          <p>You came back. And you asked for one simple, beautiful thing — to be best friends, forever. That single
+            promise cracked something open in me. The foundation of something unbreakable was quietly being built.</p>
+        </div>
+        <div class="tl-dot">🤝</div>
+        <div class="tl-spacer"></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-spacer"></div>
+        <div class="tl-dot">🎳</div>
+        <div class="tl-card">
+          <div class="tl-date">First Outing Together</div>
+          <h3>Bowling & Getting to Know You 🎳</h3>
+          <p>The first time we went out — bowling lanes, laughter, and a whole side of you I hadn't seen before. That
+            day I got to know you more, and I remember thinking: this person is truly one of a kind.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-card">
+          <div class="tl-date">Our Adventures</div>
+          <h3>Wind, Roads & Us 🏍️</h3>
+          <p>We got on bikes and let the roads take us wherever they wanted. Every destination deepened something
+            between us — a bond growing stronger with every mile, every laugh, every shared silence on the open road.
+          </p>
+        </div>
+        <div class="tl-dot">🏍️</div>
+        <div class="tl-spacer"></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-spacer"></div>
+        <div class="tl-dot">🏰</div>
+        <div class="tl-card">
+          <div class="tl-date">The Mysore Trip</div>
+          <h3>Mysore Brought Us Closer 🌺</h3>
+          <p>Something shifted during our Mysore trip. The palaces, the streets, the evenings — all of it pulled us
+            closer than we'd ever been. I came back knowing something had changed, beautifully and permanently.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-card">
+          <div class="tl-date">Two Months Ago</div>
+          <h3>We Chose Each Other 💖</h3>
+          <p>Somewhere between all those adventures and conversations, we came closer than either of us imagined. And we
+            made the most beautiful choice — to be more than best friends. I am so glad it's you. Always.</p>
+        </div>
+        <div class="tl-dot">💖</div>
+        <div class="tl-spacer"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section id="about" class="section-pad">
+    <div class="fade-in">
+      <h2 class="section-title">🌟 About You, Vaishnavi</h2>
+      <p class="section-sub">Everything I see when I look at you 🥺</p>
+    </div>
+    <div class="about-inner fade-in">
+      <div class="about-card"><span class="ac-emoji">☀️</span>
+        <h3>My Light in the Dark</h3>
+        <p>You walked into my world when it needed light the most. You didn't just brighten my days — you set them on
+          fire with warmth and colour I never knew was missing.</p>
+      </div>
+      <div class="about-card"><span class="ac-emoji">🕊️</span>
+        <h3>The Purest Soul</h3>
+        <p>In a world that can feel loud and complicated, you are rare. Your soul is soft, honest and pure — the kind of
+          person people are lucky to even cross paths with once.</p>
+      </div>
+      <div class="about-card"><span class="ac-emoji">🫂</span>
+        <h3>You Make Me Whole</h3>
+        <p>The way you respect me, stand beside me, and love me so quietly yet so deeply — you've filled spaces in my
+          heart I didn't even know were empty.</p>
+      </div>
+      <div class="about-card"><span class="ac-emoji">💪</span>
+        <h3>My Biggest Support</h3>
+        <p>You believe in me even when I forget to believe in myself. Your support is not just words — it holds you up
+          when your legs give out. You are my strength in human form.</p>
+      </div>
+      <div class="about-card"><span class="ac-emoji">🌺</span>
+        <h3>Every Little Bit of You</h3>
+        <p>I love all of you — your laugh, your silence, your moods, your quirks, your stubborn moments, your tender
+          ones. Every single bit of Vaishnavi — I love it all.</p>
+      </div>
+      <div class="about-card"><span class="ac-emoji">🌙</span>
+        <h3>My Forever Best Friend</h3>
+        <p>You asked for a promise of forever friendship — and look at us now. You are my best friend, my love, my home.
+          All in one beautiful soul.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── REASONS ── -->
+  <section id="reasons" class="section-pad">
+    <div class="fade-in">
+      <h2 class="section-title">💌 Why I Love You, Shona</h2>
+      <p class="section-sub">Just a few of the endless reasons 🫧</p>
+    </div>
+    <div class="reasons-wrap">
+      <div class="reason-item">
+        <div class="reason-num">01</div>
+        <div class="reason-text">
+          <h4>The Promise You Made 🤝</h4>
+          <p>You asked to be my best friend forever — and kept that promise. That single act of sincerity told me
+            everything about who you are.</p>
+        </div>
+      </div>
+      <div class="reason-item">
+        <div class="reason-num">02</div>
+        <div class="reason-text">
+          <h4>You Came Back 🌿</h4>
+          <p>Even after the silence, after the distance — you found your way back. Some things are meant to be, and you
+            returning is the greatest proof.</p>
+        </div>
+      </div>
+      <div class="reason-item">
+        <div class="reason-num">03</div>
+        <div class="reason-text">
+          <h4>That Bowling Day 🎳</h4>
+          <p>The first time we went out, I got to see the real you. The way you laughed, the way you were just… you. I
+            was quietly hooked without even realising it.</p>
+        </div>
+      </div>
+      <div class="reason-item">
+        <div class="reason-num">04</div>
+        <div class="reason-text">
+          <h4>Mysore Changed Everything 🏰</h4>
+          <p>That trip brought us closer in ways I can't fully put into words. Something sealed between us there. I came
+            back different — better.</p>
+        </div>
+      </div>
+      <div class="reason-item">
+        <div class="reason-num">05</div>
+        <div class="reason-text">
+          <h4>How You Respect Me 🙏</h4>
+          <p>You see me, hear me, and honour who I am. That means more than any grand gesture ever could.</p>
+        </div>
+      </div>
+      <div class="reason-item">
+        <div class="reason-num">06</div>
+        <div class="reason-text">
+          <h4>The Way You Love 💗</h4>
+          <p>Quietly, deeply, and honestly. Not for show — but with every soft glance, every small act of care, every
+            word said at exactly the right moment.</p>
+        </div>
+      </div>
+      <div class="reason-item">
+        <div class="reason-num">07</div>
+        <div class="reason-text">
+          <h4>Simply Because You're Vaishnavi 🌸</h4>
+          <p>No elaborate reason needed. You are you — and that alone is everything. The universe was generous enough to
+            bring you to me.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MEMORIES ── -->
+  <section id="memories" class="section-pad">
+    <div class="fade-in">
+      <h2 class="section-title">🎞️ Our Memories</h2>
+      <p class="section-sub">Moments I carry with me everywhere 💾</p>
+    </div>
+    <div class="gallery-grid fade-in">
+      <div class="memory-card mc1">
+        <div class="memory-card-inner"><span class="mem-emoji">🌆</span><span class="mem-label">Bangalore Meetup — Where
+            It Began</span></div>
+      </div>
+      <div class="memory-card mc2">
+        <div class="memory-card-inner"><span class="mem-emoji">🎳</span><span class="mem-label">Bowling Date — Getting
+            to Know You</span></div>
+      </div>
+      <div class="memory-card mc3">
+        <div class="memory-card-inner"><span class="mem-emoji">🏍️</span><span class="mem-label">Bike Rides & Open
+            Roads</span></div>
+      </div>
+      <div class="memory-card mc7">
+        <div class="memory-card-inner"><span class="mem-emoji">🏰</span><span class="mem-label">Mysore Trip — Closer
+            Than Ever</span></div>
+      </div>
+      <div class="memory-card mc4">
+        <div class="memory-card-inner"><span class="mem-emoji">🤝</span><span class="mem-label">The Forever
+            Promise</span></div>
+      </div>
+      <div class="memory-card mc5">
+        <div class="memory-card-inner"><span class="mem-emoji">💬</span><span class="mem-label">Late Night
+            Conversations</span></div>
+      </div>
+      <div class="memory-card mc8">
+        <div class="memory-card-inner"><span class="mem-emoji">🌅</span><span class="mem-label">Sunsets Together</span>
+        </div>
+      </div>
+      <div class="memory-card mc6">
+        <div class="memory-card-inner"><span class="mem-emoji">💖</span><span class="mem-label">The Day We Chose Each
+            Other</span></div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:24px;color:var(--brown-light);font-style:italic;font-size:.88rem;">📸 Send
+      your photos and I'll replace these with real memories!</p>
+  </section>
+
+  <!-- ── LETTER ── -->
+  <section id="letter" class="section-pad">
+    <div class="fade-in">
+      <h2 class="section-title">💌 A Letter For You</h2>
+      <p class="section-sub">From Shubham's heart, to Shona's 🫀</p>
+    </div>
+    <div class="letter-wrapper fade-in">
+      <div class="letter-date">7th June 2026 — One Beautiful Year 🌙</div>
+      <div class="letter-salute">My dearest Shona, my Bubu 🐼</div>
+      <div class="letter-content">
+        <p>I still think about that evening in Bangalore — a community meetup, a room full of strangers, and somehow,
+          you. I didn't know then what that moment would quietly grow into. But the universe did.</p>
+        <p>When the silence came between us, I thought perhaps we were just two people whose paths had briefly crossed.
+          I was wrong. Because you came back. And you asked for something so beautifully simple — to be best friends,
+          forever. That one promise changed everything.</p>
+        <p>I remember the first time we went out together — bowling, laughing, just the two of us figuring each other
+          out. That day I got to know you, really know you. And I thought: this person is something truly special.</p>
+        <p>Then came Mysore. Something shifted there, quietly and permanently. I came back closer to you than I'd ever
+          been to anyone. And two months ago, we made the best decision of our lives.</p>
+        <p>Vaishnavi, you are one of the purest souls I have ever known. You walked into my world — a world with its
+          share of shadows — and you lit it up. Not with noise, but with your quiet, steady, extraordinary presence.</p>
+        <p>I love the way you respect me. I love the way you support me. I love the way you love — softly, honestly,
+          completely. You make me whole in ways I didn't know I was missing.</p>
+        <p>So here, on the day it all began, is my promise to you:<br>I will be your best friend, always.<br>I will be
+          your safe place, always.<br>I will choose you — over and over, always.</p>
+        <p>Thank you for the promise that started everything. Thank you for coming back. Thank you for being you, my
+          Shona.</p>
+      </div>
+      <div class="letter-sig">Forever yours, Shubham 🐻💕</div>
+    </div>
+  </section>
+
+  <!-- ── HUG ── -->
+  <section id="interactive" class="section-pad">
+    <div class="fade-in">
+      <h2 class="section-title">🐼 Give Shona a Virtual Hug!</h2>
+      <p class="section-sub">Tap the panda — it's from Shubham 💝</p>
+    </div>
+    <div class="bear-click-area"><span id="clickBear">🐼</span></div>
+    <p class="click-counter" id="hugCount">0 hugs sent to Shona 🤗</p>
+    <p style="color:var(--brown-light);font-size:.92rem;margin-top:8px;font-style:italic;" id="hugMsg">Tap Bubu! 🐼</p>
+  </section>
+
+  <!-- ── QUIZ ── -->
+  <section id="quiz" class="section-pad">
+    <div class="fade-in">
+      <h2 class="section-title">💭 Shona's Quiz!</h2>
+      <p class="section-sub">Do you remember our story? 🎀</p>
+    </div>
+    <div class="quiz-box fade-in">
+      <p class="quiz-progress" id="quizProgress">Question 1 of 5</p>
+      <p class="quiz-q" id="quizQuestion">Loading...</p>
+      <div class="quiz-options" id="quizOptions"></div>
+      <p class="quiz-result" id="quizResult"></p>
+      <div class="quiz-nav"><button id="quizNext" style="display:none">Next →</button></div>
+    </div>
+  </section>
+
+  <!-- ── COUNTDOWN ── -->
+  <section id="countdown" class="section-pad">
+    <div class="fade-in">
+      <h2 class="section-title">⏰ Since We First Met</h2>
+      <p class="section-sub">Counting every precious second since 7th June 2025 🌸</p>
+    </div>
+    <div class="countdown-grid fade-in">
+      <div class="cd-block"><span class="cd-num" id="cdDays">---</span><span class="cd-label">Days</span></div>
+      <div class="cd-block"><span class="cd-num" id="cdHours">--</span><span class="cd-label">Hours</span></div>
+      <div class="cd-block"><span class="cd-num" id="cdMins">--</span><span class="cd-label">Minutes</span></div>
+      <div class="cd-block"><span class="cd-num" id="cdSecs">--</span><span class="cd-label">Seconds</span></div>
+    </div>
+  </section>
+
+  <!-- ── SONGS ── -->
+  <section id="vibes" class="section-pad">
+    <div class="fade-in">
+      <h2 class="section-title">🎵 Songs That Are Us</h2>
+      <p class="section-sub">A playlist woven from our story 🎧</p>
+    </div>
+    <div class="song-list fade-in">
+      <div class="song-card song-fav">
+        <div class="song-num">⭐</div>
+        <div class="song-info">
+          <div class="song-title">Tere Liye — Atif Aslam</div>
+          <div class="song-artist">Shona's favourite 💛 Tere liye hum hain jiye...</div>
+        </div>
+        <span class="song-note">⭐</span>
+      </div>
+      <div class="song-card">
+        <div class="song-num">01</div>
+        <div class="song-info">
+          <div class="song-title">Jo Tere Sang Kati Raatein</div>
+          <div class="song-artist">Jo tere sang kati raatein, woh mujhe yaad hai... 🌙</div>
+        </div><span class="song-note">🌙</span>
+      </div>
+      <div class="song-card">
+        <div class="song-num">02</div>
+        <div class="song-info">
+          <div class="song-title">Bairan — Nikhita Gandhi</div>
+          <div class="song-artist">Tu bairan meri, dil ki bairan meri... 🌺</div>
+        </div><span class="song-note">🌺</span>
+      </div>
+      <div class="song-card">
+        <div class="song-num">03</div>
+        <div class="song-info">
+          <div class="song-title">Woh Lamhe — Atif Aslam</div>
+          <div class="song-artist">Woh lamhe, woh baatein... sab yaad hai mujhe 💫</div>
+        </div><span class="song-note">💫</span>
+      </div>
+      <div class="song-card">
+        <div class="song-num">04</div>
+        <div class="song-info">
+          <div class="song-title">Tadap Tadap — KK</div>
+          <div class="song-artist">KK's voice that feels like falling in love 💖</div>
+        </div><span class="song-note">💖</span>
+      </div>
+      <div class="song-card">
+        <div class="song-num">05</div>
+        <div class="song-info">
+          <div class="song-title">Tu Hi Meri Shab Hai — KK</div>
+          <div class="song-artist">Tu hi meri shab hai, subah hai... 🌅</div>
+        </div><span class="song-note">🌅</span>
+      </div>
+      <div class="song-card">
+        <div class="song-num">06</div>
+        <div class="song-info">
+          <div class="song-title">Aankhon Mein Teri — KK</div>
+          <div class="song-artist">Aankhon mein teri ajab si adaayen hain ✨</div>
+        </div><span class="song-note">✨</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-bears">🐻💕🐼</span>
+    <p>Made with every last drop of love by <strong>Shubham</strong>,<br>
+      for the most beautiful soul — <strong>Vaishnavi (Shona)</strong> 🌸<br><br>
+      <em>From a meetup in Bangalore, a bowling alley, Mysore evenings<br>and open roads — to forever. I'd do it all
+        again, just for you.</em>
+    </p>
+    <span class="footer-sig">Happy 1 Year, my Bubu 💕 — Love, Dudu 🐻</span>
+  </footer>
+
+  <script>
+    // HEARTS
+    const hBg = document.getElementById('heartsBg');
+    const hArr = ['💕', '💖', '💗', '💓', '💝', '🌸', '✨', '💞', '🐾', '🌺', '🫀', '🌼', '🍓'];
+    function spawnH() {
+      const h = document.createElement('div'); h.className = 'heart-float';
+      h.textContent = hArr[Math.floor(Math.random() * hArr.length)];
+      h.style.cssText = `left:${Math.random() * 100}vw;font-size:${.9 + Math.random() * 1.4}rem;animation-duration:${7 + Math.random() * 9}s;animation-delay:${Math.random() * 2}s;`;
+      hBg.appendChild(h); setTimeout(() => h.remove(), 18000);
+    }
+    setInterval(spawnH, 550); for (let i = 0; i < 12; i++)setTimeout(spawnH, i * 180);
+
+    // MOBILE NAV
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('mobileMenu');
+    toggle.addEventListener('click', () => menu.classList.toggle('open'));
+    document.querySelectorAll('.mm-link').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+    document.addEventListener('click', e => { if (!menu.contains(e.target) && e.target !== toggle) menu.classList.remove('open'); });
+
+    // SCROLL OBSERVER
+    const obs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible') }), { threshold: .1 });
+    document.querySelectorAll('.fade-in,.tl-card,.reason-item').forEach(el => obs.observe(el));
+
+    // HUG
+    let hugs = 0;
+    const msgs = ["Tap Bubu! 🐼", "Aww, Shona got a hug! 🥺💕", "She's smiling so wide! 😊🌸", "Shubham loves you SO much! 💖", "More hugs! Don't stop!! 🐻", "You're the best Shona ever! 🐼✨", "Bubu is blushing~ 🌺", "Shubham's heart is overflowing 💗", "You make everything beautiful, Shona 🌸", "10 hugs!! You are so so loved! 🎉💕"];
+    const bF = ['🐼', '🥺', '🥰', '😊', '🐼', '💕', '🐼', '✨', '🐼', '💖'];
+    document.getElementById('clickBear').addEventListener('click', function (e) {
+      hugs++;
+      document.getElementById('hugCount').textContent = `${hugs} hug${hugs > 1 ? 's' : ''} sent to Shona 🤗`;
+      document.getElementById('hugMsg').textContent = msgs[Math.min(hugs - 1, msgs.length - 1)];
+      this.textContent = bF[Math.min(hugs - 1, bF.length - 1)];
+      for (let i = 0; i < 6; i++) {
+        const p = document.createElement('span'); p.className = 'pop-heart';
+        p.textContent = ['💕', '💖', '💗', '🌸', '✨', '🌺'][Math.floor(Math.random() * 6)];
+        const r = this.getBoundingClientRect();
+        p.style.cssText = `left:${r.left + r.width / 2 - 10 + Math.random() * 60 - 30}px;top:${r.top + window.scrollY}px;animation-delay:${Math.random() * .3}s;`;
+        document.body.appendChild(p); setTimeout(() => p.remove(), 1500);
+      }
+      if (hugs === 10) confetti();
+    });
+
+    // CONFETTI
+    function confetti() {
+      ['#ff85a1', '#ffd4a3', '#c8f0e8', '#e8d5f5', '#fff0a3', '#ff6b9d', '#ffb347'].forEach(col => {
+        for (let i = 0; i < 12; i++) {
+          const c = document.createElement('div'); c.className = 'confetti-piece';
+          c.style.cssText = `left:${Math.random() * 100}vw;width:${6 + Math.random() * 9}px;height:${10 + Math.random() * 16}px;background:${col};animation-duration:${2 + Math.random() * 2.5}s;animation-delay:${Math.random()}s;`;
+          document.body.appendChild(c); setTimeout(() => c.remove(), 5000);
+        }
+      });
+    }
+
+    // QUIZ
+    const qs = [
+      { q: "🌆 Where did Shubham and Vaishnavi first meet?", o: ["A café in Koramangala ☕", "A Marathi Community Meetup in Bangalore 🌆", "A college fest in Mumbai 🎓", "A wedding in Pune 🎊"], c: 1, r: "Yes! That Bangalore meetup was where it all quietly began 🌟💕" },
+      { q: "🎳 What did they do on their very first outing together?", o: ["Watched a movie 🎬", "Went for a long drive 🚗", "Went bowling 🎳", "Hiked a trail 🌿"], c: 2, r: "Bowling! And that day Shubham got to truly see how special you are 🎳🥺" },
+      { q: "🏰 Which trip brought them even closer recently?", o: ["Goa trip 🏖️", "Coorg trip 🌿", "Mysore trip 🏰", "Ooty trip 🌸"], c: 2, r: "Mysore 🏰 — those evenings together changed everything, beautifully 💖" },
+      { q: "🤝 What special promise sparked their deep bond?", o: ["A promise to call every day 📞", "A promise of best friendship — forever 🤝", "A promise to travel together 🌍", "A promise to meet every weekend 🗓️"], c: 1, r: "That forever friendship promise was the most beautiful beginning 🥺💕" },
+      { q: "📅 On what date did their story first begin?", o: ["14th February 2025 💕", "1st January 2025 🎉", "7th June 2025 🌸", "7th July 2025 🌻"], c: 2, r: "7th June 2025 — a date that changed both their lives forever 🌸💕" }
+    ];
+    let curQ = 0, score = 0, answered = false;
+    function loadQ() {
+      const q = qs[curQ];
+      document.getElementById('quizProgress').textContent = `Question ${curQ + 1} of ${qs.length}`;
+      document.getElementById('quizQuestion').textContent = q.q;
+      const opts = document.getElementById('quizOptions'); opts.innerHTML = '';
+      document.getElementById('quizResult').style.display = 'none';
+      document.getElementById('quizNext').style.display = 'none';
+      answered = false;
+      q.o.forEach((o, i) => {
+        const btn = document.createElement('button'); btn.className = 'quiz-opt'; btn.textContent = o;
+        btn.onclick = () => {
+          if (answered) return; answered = true;
+          if (i === q.c) { btn.classList.add('correct'); score++; }
+          else { btn.classList.add('wrong'); opts.children[q.c].classList.add('correct'); }
+          document.getElementById('quizResult').textContent = q.r;
+          document.getElementById('quizResult').style.display = 'block';
+          document.getElementById('quizNext').style.display = curQ < qs.length - 1 ? 'inline-block' : 'none';
+          if (curQ === qs.length - 1) setTimeout(() => {
+            document.getElementById('quizQuestion').textContent = `🎉 ${score}/${qs.length} — You know our story so well, Shona! 💕`;
+            opts.innerHTML = '';
+            document.getElementById('quizResult').textContent = score === qs.length ? "Perfect!! You're literally perfect!! 🏆💖🎉" : "You're amazing no matter what, Shona! 🌸";
+            document.getElementById('quizResult').style.display = 'block';
+            if (score >= 4) confetti();
+          }, 1600);
+        };
+        opts.appendChild(btn);
+      });
+    }
+    document.getElementById('quizNext').onclick = () => { curQ++; loadQ(); };
+    loadQ();
+
+    // COUNTDOWN
+    const start = new Date('2025-06-07T00:00:00');
+    function updateCD() {
+      const d = new Date() - start;
+      document.getElementById('cdDays').textContent = Math.floor(d / 864e5).toLocaleString();
+      document.getElementById('cdHours').textContent = String(Math.floor((d % 864e5) / 36e5)).padStart(2, '0');
+      document.getElementById('cdMins').textContent = String(Math.floor((d % 36e5) / 6e4)).padStart(2, '0');
+      document.getElementById('cdSecs').textContent = String(Math.floor((d % 6e4) / 1000)).padStart(2, '0');
+    }
+    setInterval(updateCD, 1000); updateCD();
+  </script>
+</body>
+
+</html>
